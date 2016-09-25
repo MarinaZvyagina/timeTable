@@ -29,14 +29,19 @@ class Station {
         self.stationId = stationId
         self.stationTitle = stationTitle
     }
+
+    static func getPointFromJsonObject(object: AnyObject)->(longitude: Double, latitude: Double){
+        let pointFromStation = object["point"] as AnyObject
+        let pointLongitude = pointFromStation["longitude"] as! Double
+        let pointLatitude = pointFromStation["latitude"] as! Double
+        let point = (pointLongitude,pointLatitude)
+        return point
+    }
     
     static func getStationFromJson(station:AnyObject)->Station{
         let countryTitle = station["countryTitle"] as! String
         
-        let pointFromStation = station["point"] as AnyObject!
-        let pointLongitude = pointFromStation["longitude"] as! Double
-        let pointLatitude = pointFromStation["latitude"] as! Double
-        let point = (pointLongitude,pointLatitude)
+        let point = getPointFromJsonObject(station)
         
         let districtTitle = station["districtTitle"] as! String
         
