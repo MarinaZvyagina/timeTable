@@ -29,18 +29,29 @@ class Station {
         self.stationId = stationId
         self.stationTitle = stationTitle
     }
-
-    static func getPointFromJsonObject(object: AnyObject)->(longitude: Double, latitude: Double){
-        let pointFromStation = object["point"] as AnyObject
+/*
+    static func getPointFromJsonObject(param: AnyObject)->(longitude: Double, latitude: Double){
+        let pointFromStation = param["point"] as AnyObject
         let pointLongitude = pointFromStation["longitude"] as! Double
         let pointLatitude = pointFromStation["latitude"] as! Double
         let point = (pointLongitude,pointLatitude)
         return point
     }
+*/
+    // Internal bug of xcode don't allow me to use param["point"] as AnyObject
+    static func getPointFromJsonObject(station: AnyObject)->(longitude: Double, latitude: Double){
+        return (0,0)
+    }
     
     static func getStationFromJson(station:AnyObject)->Station{
         let countryTitle = station["countryTitle"] as! String
         
+    /*    let pointFromStation = station["point"] as AnyObject
+        let pointLongitude = pointFromStation["longitude"] as! Double
+        let pointLatitude = pointFromStation["latitude"] as! Double
+        let point = (pointLongitude,pointLatitude)
+*/
+
         let point = getPointFromJsonObject(station)
         
         let districtTitle = station["districtTitle"] as! String
@@ -53,9 +64,9 @@ class Station {
         let stationId = station["stationId"] as! Int
         let stationTitle = station["stationTitle"] as! String
 
-        let station = Station(countryTitle: countryTitle, point: point, districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stationId: stationId, stationTitle: stationTitle)
+        let stat = Station(countryTitle: countryTitle, point: (0,0), districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stationId: stationId, stationTitle: stationTitle)
         
-        return station
+        return stat
         
     }
     

@@ -16,6 +16,10 @@
 		1442C5D61D91B11700574A5D /* CopyrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5D51D91B11700574A5D /* CopyrightViewController.swift */; };
 		1442C5D81D91E02100574A5D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5D71D91E02100574A5D /* TableViewController.swift */; };
 		1442C5DA1D931D9000574A5D /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1442C5D91D931D9000574A5D /* allStations.json */; };
+		1442C5DC1D9716CB00574A5D /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5DB1D9716CB00574A5D /* Station.swift */; };
+		1442C5DE1D973CDA00574A5D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5DD1D973CDA00574A5D /* City.swift */; };
+		1442C5E01D9758B100574A5D /* StationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5DF1D9758B100574A5D /* StationTests.swift */; };
+		1442C5E21D981C5700574A5D /* CityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442C5E11D981C5700574A5D /* CityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		1442C5D51D91B11700574A5D /* CopyrightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyrightViewController.swift; sourceTree = "<group>"; };
 		1442C5D71D91E02100574A5D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1442C5D91D931D9000574A5D /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
+		1442C5DB1D9716CB00574A5D /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		1442C5DD1D973CDA00574A5D /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		1442C5DF1D9758B100574A5D /* StationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTests.swift; sourceTree = "<group>"; };
+		1442C5E11D981C5700574A5D /* CityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +94,12 @@
 				1442C5B51D91A45C00574A5D /* AppDelegate.swift */,
 				1442C5B71D91A45C00574A5D /* ViewController.swift */,
 				1442C5B91D91A45C00574A5D /* Main.storyboard */,
+				1442C5DB1D9716CB00574A5D /* Station.swift */,
+				1442C5DD1D973CDA00574A5D /* City.swift */,
 				1442C5D71D91E02100574A5D /* TableViewController.swift */,
 				1442C5D51D91B11700574A5D /* CopyrightViewController.swift */,
-				1442C5BC1D91A45C00574A5D /* Assets.xcassets */,
 				1442C5D91D931D9000574A5D /* allStations.json */,
+				1442C5BC1D91A45C00574A5D /* Assets.xcassets */,
 				1442C5BE1D91A45C00574A5D /* LaunchScreen.storyboard */,
 				1442C5C11D91A45C00574A5D /* Info.plist */,
 			);
@@ -101,6 +111,8 @@
 			children = (
 				1442C5CA1D91A45D00574A5D /* timeTableTests.swift */,
 				1442C5CC1D91A45D00574A5D /* Info.plist */,
+				1442C5DF1D9758B100574A5D /* StationTests.swift */,
+				1442C5E11D981C5700574A5D /* CityTests.swift */,
 			);
 			path = timeTableTests;
 			sourceTree = "<group>";
@@ -210,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1442C5B81D91A45C00574A5D /* ViewController.swift in Sources */,
+				1442C5DC1D9716CB00574A5D /* Station.swift in Sources */,
+				1442C5DE1D973CDA00574A5D /* City.swift in Sources */,
 				1442C5D61D91B11700574A5D /* CopyrightViewController.swift in Sources */,
 				1442C5B61D91A45C00574A5D /* AppDelegate.swift in Sources */,
 				1442C5D81D91E02100574A5D /* TableViewController.swift in Sources */,
@@ -220,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1442C5E01D9758B100574A5D /* StationTests.swift in Sources */,
+				1442C5E21D981C5700574A5D /* CityTests.swift in Sources */,
 				1442C5CB1D91A45D00574A5D /* timeTableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

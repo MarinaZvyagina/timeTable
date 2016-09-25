@@ -48,9 +48,9 @@ class City {
         let regionTitle = city["regionTitle"] as! String
         let stations = resultStations
         
-        let city = City(countryTitle: countryTitle, point: point, districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stations: stations)
+        let rcity = City(countryTitle: countryTitle, point: (0,0), districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stations: stations)
         
-        return city
+        return rcity
         
     }
 

@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="759" y="-49"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="vob-BA-GEg">
             <objects>
-                <viewController id="Eg2-P6-sqb" sceneMemberID="viewController">
+                <viewController id="Eg2-P6-sqb" customClass="TableViewController" customModule="timeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yvf-cV-C2b"/>
                         <viewControllerLayoutGuide type="bottom" id="gom-Fa-WQh"/>
@@ -52,23 +52,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="94h-np-9Hi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-B7-4XU">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="HideTableView:" destination="Eg2-P6-sqb" eventType="editingDidEnd" id="6av-iY-k7E"/>
+                                    <action selector="ShowTableView:" destination="Eg2-P6-sqb" eventType="editingDidBegin" id="A34-1T-3uD"/>
+                                    <action selector="textFieldDoneEditing:" destination="Eg2-P6-sqb" eventType="editingDidEnd" id="Abi-hJ-P8I"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="udi-Qk-anE">
+                                <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="HideTableView:" destination="Eg2-P6-sqb" eventType="editingDidEnd" id="Spt-Sv-whW"/>
+                                    <action selector="ShowTableView:" destination="Eg2-P6-sqb" eventType="editingDidBegin" id="It8-8k-Eni"/>
+                                    <action selector="textFieldDoneEditing:" destination="Eg2-P6-sqb" eventType="editingDidEnd" id="LrV-id-OBZ"/>
+                                </connections>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-Na-PrY">
+                                <rect key="frame" x="0.0" y="148" width="600" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="awX-Ow-Wf8"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="496516896.48448199">
+                                    <!--2016-09-25 17:21:36 +0000-->
+                                </date>
+                            </datePicker>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="94h-np-9Hi">
+                                <rect key="frame" x="0.0" y="246" width="600" height="310"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eg2-P6-sqb" id="RiI-7s-Gi0"/>
+                                    <outlet property="delegate" destination="Eg2-P6-sqb" id="4Wv-iV-MHY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="94h-np-9Hi" firstAttribute="top" secondItem="DFH-Na-PrY" secondAttribute="bottom" constant="8" symbolic="YES" id="Dc8-e2-KF4"/>
+                            <constraint firstItem="udi-Qk-anE" firstAttribute="top" secondItem="RRe-B7-4XU" secondAttribute="bottom" constant="8" symbolic="YES" id="EKa-nQ-oWE"/>
                             <constraint firstItem="94h-np-9Hi" firstAttribute="top" secondItem="IjQ-OC-dvV" secondAttribute="top" id="IUW-dr-i3I"/>
+                            <constraint firstItem="DFH-Na-PrY" firstAttribute="top" secondItem="udi-Qk-anE" secondAttribute="bottom" constant="8" symbolic="YES" id="KC7-Ep-2cE"/>
+                            <constraint firstItem="RRe-B7-4XU" firstAttribute="top" secondItem="yvf-cV-C2b" secondAttribute="bottom" constant="8" symbolic="YES" id="LkX-ST-l5Z"/>
+                            <constraint firstItem="DFH-Na-PrY" firstAttribute="leading" secondItem="94h-np-9Hi" secondAttribute="leading" id="NMv-yT-LLw"/>
+                            <constraint firstItem="RRe-B7-4XU" firstAttribute="leading" secondItem="udi-Qk-anE" secondAttribute="leading" id="P7r-fb-PXh"/>
                             <constraint firstAttribute="trailing" secondItem="94h-np-9Hi" secondAttribute="trailing" id="Qsv-xC-u0t"/>
                             <constraint firstItem="94h-np-9Hi" firstAttribute="bottom" secondItem="gom-Fa-WQh" secondAttribute="top" id="Rvp-Hs-9CR"/>
+                            <constraint firstItem="RRe-B7-4XU" firstAttribute="leading" secondItem="IjQ-OC-dvV" secondAttribute="leadingMargin" id="bjt-V3-I5z"/>
                             <constraint firstItem="94h-np-9Hi" firstAttribute="leading" secondItem="IjQ-OC-dvV" secondAttribute="leading" id="dYJ-17-kAU"/>
+                            <constraint firstItem="udi-Qk-anE" firstAttribute="centerX" secondItem="DFH-Na-PrY" secondAttribute="centerX" id="eBB-vk-ShJ"/>
+                            <constraint firstItem="DFH-Na-PrY" firstAttribute="trailing" secondItem="94h-np-9Hi" secondAttribute="trailing" id="qzB-Mo-JNZ"/>
+                            <constraint firstItem="RRe-B7-4XU" firstAttribute="trailing" secondItem="udi-Qk-anE" secondAttribute="trailing" id="uFS-Kh-eN4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IUW-dr-i3I"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="fromField" destination="RRe-B7-4XU" id="33K-Ad-v6Z"/>
+                        <outlet property="tableView" destination="94h-np-9Hi" id="vOn-mc-erq"/>
+                        <outlet property="toField" destination="udi-Qk-anE" id="paR-gk-FhE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oA-uK-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="787"/>
+            <point key="canvasLocation" x="752" y="771"/>
         </scene>
         <!--Copyright View Controller-->
         <scene sceneID="QSi-bp-Har">
